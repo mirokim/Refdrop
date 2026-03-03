@@ -33,7 +33,7 @@ Write-Host "  Copied helper to $ExePath"
 $manifest = @{
     name            = "com.refdrop.helper"
     description     = "RefDrop Helper - bridges Chrome to PureRef"
-    path            = $ExePath.Replace("\", "\\")
+    path            = $ExePath
     type            = "stdio"
     allowed_origins = @("chrome-extension://$ExtensionId/")
 } | ConvertTo-Json -Depth 5
