@@ -27,3 +27,6 @@ releases/
 /icon45.png
 /icon136.png
 /icon363.png
+
+# Installer test artifacts
+installer/windows/refdrop_helper/

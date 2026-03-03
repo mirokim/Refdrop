@@ -14,7 +14,7 @@ EXE_NAME = "refdrop_helper"
 
 args = [
     sys.executable, "-m", "PyInstaller",
-    "--onefile",
+    "--onedir",
     "--noconsole",
     "--name", EXE_NAME,
     "refdrop_helper.py",
@@ -27,4 +27,4 @@ if SYSTEM == "Windows":
              "--hidden-import", "win32con"]
 
 subprocess.run(args, check=True)
-print(f"\nBuild complete: dist/{EXE_NAME}" + (".exe" if SYSTEM == "Windows" else ""))
+print(f"\nBuild complete: dist/{EXE_NAME}/" + (".exe" if SYSTEM == "Windows" else ""))

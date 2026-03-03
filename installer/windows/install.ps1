@@ -8,10 +8,11 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-$InstallDir  = "$env:LOCALAPPDATA\RefDrop"
-$ExePath     = "$InstallDir\refdrop_helper.exe"
+$InstallDir   = "$env:LOCALAPPDATA\RefDrop"
+$HelperDir    = "$InstallDir\refdrop_helper"
+$ExePath      = "$HelperDir\refdrop_helper.exe"
 $ManifestPath = "$InstallDir\refdrop.json"
-$RegKey      = "HKCU:\Software\Google\Chrome\NativeMessagingHosts\com.refdrop.helper"
+$RegKey       = "HKCU:\Software\Google\Chrome\NativeMessagingHosts\com.refdrop.helper"
 
 Write-Host "RefDrop Installer" -ForegroundColor Cyan
 Write-Host "Installing to: $InstallDir"
@@ -19,15 +20,15 @@ Write-Host "Installing to: $InstallDir"
 # 1. Create install directory
 New-Item -ItemType Directory -Force -Path $InstallDir | Out-Null
 
-# 2. Copy executable
-$ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$SourceExe = Join-Path $ScriptDir "refdrop_helper.exe"
-if (-Not (Test-Path $SourceExe)) {
-    Write-Error "refdrop_helper.exe not found next to install.ps1"
+# 2. Copy helper folder
+$ScriptDir  = Split-Path -Parent $MyInvocation.MyCommand.Path
+$SourceDir  = Join-Path $ScriptDir "refdrop_helper"
+if (-Not (Test-Path $SourceDir)) {
+    Write-Error "refdrop_helper folder not found next to install.ps1"
     exit 1
 }
-Copy-Item $SourceExe $ExePath -Force
-Write-Host "  Copied helper to $ExePath"
+Copy-Item $SourceDir $HelperDir -Recurse -Force
+Write-Host "  Copied helper to $HelperDir"
 
 # 3. Write NativeMessaging manifest
 $manifest = @{
