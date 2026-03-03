@@ -3,7 +3,7 @@
 # Run as Administrator (or the registry key will go to HKCU which is fine for single-user).
 
 param(
-    [string]$ExtensionId = "PLACEHOLDER_EXTENSION_ID"
+    [string]$ExtensionId = "obimncghooebncelfoommfdlamciclam"
 )
 
 $ErrorActionPreference = "Stop"
