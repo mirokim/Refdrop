@@ -2,6 +2,7 @@
   "manifest_version": 3,
   "name": "RefDrop",
   "version": "0.1.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArefrTUkiRUalYnTjWpyYGYcO7Wu3Q9AtTiQEBRiI605kb+fIYHE1bu9j8NhFeS+U3MIFc0jo8jwoV3N78GqGxIKr98fpuYzLd1L4yLagIZ2uw0dFp3y7mXOaKWMOX/LmbmWZKj2rrSEfUtKNwhXAwfeCcnB3rTYu/df2qxbnKAOxCkRXFzx6g9cnAQHomujQAgGbTPbnxBELrTARwsdqDOFFmSSZDLxjx/Dn7ucGI+RhXnClbyfW8UxZNgyxFmJ2n0LUF/96Tl5teeqKWCMmLwXiK1aq+ezEw7YeQACakv8byqUf8zbt1NLw5yb1KGu0r4q3k3Aeqo2ltqJ5oyExyQIDAQAB",
   "description": "Send any web image or video frame directly into PureRef. One click.",
 
   "permissions": [
