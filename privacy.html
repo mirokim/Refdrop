@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RefDrop — Privacy Policy</title>
+<style>
+  :root { --bg:#0a0a0a; --surface:#111; --border:#222; --text:#e8e8e8; --dim:#888; --mono:"DM Mono","Courier New",monospace; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:15px; line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .page { max-width:680px; margin:0 auto; padding:64px 32px 100px; }
+  .back { display:inline-block; font-size:13px; color:var(--dim); text-decoration:none; margin-bottom:40px; }
+  .back:hover { color:var(--text); }
+  h1 { font-size:26px; font-weight:600; margin-bottom:6px; }
+  .updated { font-family:var(--mono); font-size:11px; color:var(--dim); margin-bottom:48px; }
+  h2 { font-size:15px; font-weight:600; margin:36px 0 10px; color:var(--text); }
+  p { color:#aaa; margin-bottom:14px; }
+  ul { color:#aaa; padding-left:20px; margin-bottom:14px; }
+  ul li { margin-bottom:6px; }
+  hr { border:none; border-top:1px solid var(--border); margin:40px 0; }
+  .contact { font-family:var(--mono); font-size:12px; color:var(--dim); }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="back" href="./">← Back to RefDrop</a>
+
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: March 2025</p>
+
+  <h2>1. What RefDrop does</h2>
+  <p>RefDrop is a Chrome extension that lets you send images and video frames from web pages directly into PureRef, a reference image viewer running on your computer. A companion helper app installed locally handles the transfer to PureRef.</p>
+
+  <h2>2. Data we collect</h2>
+  <p>RefDrop collects and stores the following data <strong>locally on your device only</strong>, using <code>chrome.storage.local</code>:</p>
+  <ul>
+    <li><strong>Send count</strong> — a cumulative counter of how many images you have sent (used to enforce the 50-image free tier limit).</li>
+    <li><strong>License status</strong> — whether a valid PRO license key has been activated.</li>
+    <li><strong>License key hash</strong> — the key you entered, stored locally to persist your PRO activation across browser restarts.</li>
+    <li><strong>Helper status</strong> — whether the local helper app is installed (stored as a boolean flag).</li>
+  </ul>
+  <p>None of this data is transmitted to any external server operated by RefDrop.</p>
+
+  <h2>3. License verification</h2>
+  <p>When you activate a PRO license key, the key is sent to <strong>Gumroad's license verification API</strong> (<code>api.gumroad.com/v2/licenses/verify</code>) to confirm its validity. This is a one-time request at the moment of activation. After verification, the result is stored locally and no further requests are made to Gumroad.</p>
+  <p>Gumroad's own privacy policy applies to that request: <a href="https://gumroad.com/privacy" style="color:#888;">gumroad.com/privacy</a></p>
+
+  <h2>4. Image data</h2>
+  <p>Images you choose to send are transferred <strong>directly from your browser to the local helper app</strong> via Chrome's Native Messaging API (a local stdio pipe). Images are never uploaded to any server. They exist only in memory during the transfer and are discarded immediately after PureRef receives them.</p>
+
+  <h2>5. Permissions used</h2>
+  <ul>
+    <li><strong>storage</strong> — stores the send count and license status locally.</li>
+    <li><strong>nativeMessaging</strong> — communicates with the locally installed helper app to send images to PureRef.</li>
+    <li><strong>scripting / activeTab</strong> — injects the hover button UI into web pages so you can click images.</li>
+    <li><strong>contextMenus</strong> — adds a right-click menu option as an alternative to the hover button.</li>
+    <li><strong>&lt;all_urls&gt;</strong> — required so the hover button can appear on any website you visit.</li>
+  </ul>
+
+  <h2>6. No tracking, no analytics</h2>
+  <p>RefDrop does not use any analytics service, crash reporter, or telemetry. No usage data is collected or transmitted.</p>
+
+  <h2>7. Changes to this policy</h2>
+  <p>If the privacy policy changes in a meaningful way, we will update the date above and note what changed.</p>
+
+  <hr>
+  <p class="contact">Questions? Contact: <a href="https://github.com/mirokim/Refdrop/issues" style="color:#888;">github.com/mirokim/Refdrop/issues</a></p>
+</div>
+</body>
+</html>

@@ -1,8 +1,8 @@
 // popup.js
 
 const GUMROAD_URL = "https://miroverse8.gumroad.com/l/Refdrop";
-const HELP_URL = "https://refdrop.app/";                      // update when live
-const INSTALLER_URL = "https://github.com/refdrop/refdrop/releases/latest"; // update when live
+const HELP_URL = "https://mirokim.github.io/Refdrop/";
+const INSTALLER_URL = "https://github.com/mirokim/Refdrop/releases/latest";
 const FREE_LIMIT = 50;
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────

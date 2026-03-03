@@ -18,6 +18,10 @@ Thumbs.db
 # PyInstaller output
 helper/dist/
 helper/build/
+helper/*.spec
+
+# Release ZIPs (uploaded to GitHub Releases)
+releases/
 
 # Loose icon originals at root (in extension/icons/ instead)
 /icon45.png
